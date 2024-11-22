@@ -1,0 +1,34 @@
+Initialize location counter (LOCCTR) with start address
+Initialize symbol table (SYMTAB) as empty
+Read the first input line
+
+WHILE not end of input file
+    IF line contains a label THEN
+        IF label is not in SYMTAB THEN
+            Add label to SYMTAB with LOCCTR value
+        ELSE
+            Print error: Duplicate label
+        ENDIF
+    ENDIF
+
+    IF operation is not a directive THEN
+        Add (operation, operand) to intermediate file
+        Increment LOCCTR by the instruction length
+    ELSE IF operation is 'WORD' THEN
+        Increment LOCCTR by 3
+    ELSE IF operation is 'RESW' THEN
+        Increment LOCCTR by (3 * # of words)
+    ELSE IF operation is 'RESB' THEN
+        Increment LOCCTR by # of bytes
+    ELSE IF operation is 'BYTE' THEN
+        Increment LOCCTR by length of constant in bytes
+    ELSE IF operation is 'START' THEN
+        Continue processing
+    ELSE IF operation is 'END' THEN
+        Write the end record to intermediate file
+    ENDIF
+
+    Read the next line
+ENDWHILE
+
+Write the final values of LOCCTR and SYMTAB

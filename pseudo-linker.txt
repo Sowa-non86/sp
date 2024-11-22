@@ -1,0 +1,16 @@
+Initialize external symbol table
+Initialize relocation table
+
+FOR each object module
+    FOR each symbol in module
+        IF symbol is external THEN
+            Update external symbol table with address
+        ENDIF
+    ENDFOR
+
+    FOR each address in relocation table
+        Adjust address using relocation factor
+    ENDFOR
+
+    Write linked object module
+ENDFOR

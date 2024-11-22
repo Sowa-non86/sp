@@ -1,0 +1,15 @@
+Initialize expansion counter
+Read first line from intermediate file
+
+WHILE not end of intermediate file
+    IF line contains a macro call THEN
+        Search MNT for macro name
+        Retrieve macro body from MDT
+        Substitute actual parameters for formal parameters using PNTAB
+        Write expanded code to output
+    ELSE
+        Write line to output
+    ENDIF
+
+    Read next line
+ENDWHILE

@@ -1,0 +1,15 @@
+Initialize Macro Name Table (MNT)
+Initialize Macro Definition Table (MDT)
+Initialize Parameter Name Table (PNTAB)
+
+WHILE not end of input
+    Read next line
+    IF line contains 'MACRO' THEN
+        Read macro definition
+        Add macro name to MNT
+        Add macro body to MDT
+        Add parameters to PNTAB
+    ELSE
+        Write line to intermediate file
+    ENDIF
+ENDWHILE

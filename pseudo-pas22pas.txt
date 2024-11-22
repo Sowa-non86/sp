@@ -1,0 +1,25 @@
+Read first line from the intermediate file
+
+WHILE not end of intermediate file
+    IF line is not a comment THEN
+        IF operation is in OPTAB THEN
+            Get opcode from OPTAB
+            IF operand is in SYMTAB THEN
+                Get operand address from SYMTAB
+                Write object code by combining opcode and operand address
+            ELSE
+                Print error: Undefined symbol
+            ENDIF
+        ELSE IF operation is 'WORD' THEN
+            Convert constant to object code
+        ELSE IF operation is 'BYTE' THEN
+            Convert constant to object code
+        ELSE IF operation is 'RESW' or 'RESB' THEN
+            Continue processing
+        ENDIF
+    ENDIF
+
+    Read the next line
+ENDWHILE
+
+Write the end record to object program

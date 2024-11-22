@@ -1,0 +1,11 @@
+Read the linked object module
+Initialize memory allocation
+
+FOR each segment in object module
+    Allocate memory
+    Adjust addresses using relocation data
+    Load segment into memory
+ENDFOR
+
+Set start address for execution
+Begin execution
